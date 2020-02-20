@@ -1,0 +1,21 @@
+{
+  "name": "hisn-muslim-scrapping",
+  "version": "1.0.0",
+  "description": "A sample JavaScript/NodeJs scrapper project based on hisnmuslim API to use all off the test & audios offline without the connecting with the original api",
+  "main": "index.js",
+  "scripts": {
+		"start": "node index.js && node fetch.js mode=prod && node merge.js mode=prod && node fetch-sub.js mode=prod",
+		"dev": "node index.js && node fetch.js mode=test && node merge.js mode=test && node fetch-sub.js mode=test",
+		"start:en": "node index.js && node fetch.js mode=prod lang=en && node merge.js mode=prod lang=en && node fetch-sub.js mode=prod lang=en",
+		"dev:en": "node index.js && node fetch.js mode=test lang=en && node merge.js mode=test lang=en && node fetch-sub.js mode=test lang=en"
+  },
+  "keywords": [],
+  "author": "Mohssin Aboutaj",
+  "license": "MIT",
+  "dependencies": {
+    "argv": "^0.0.2",
+    "axios": "^0.19.2",
+    "node-wget": "^0.4.3",
+    "write-json": "^3.0.1"
+  }
+}

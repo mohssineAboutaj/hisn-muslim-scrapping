@@ -1,0 +1,11 @@
+# ignore directories
+node_modules/
+data/
+audio/
+# ignore IDE's files/directories
+.idea
+# ignore files
+package-lock.json
+yarn.lock
+*.lock
+*.log

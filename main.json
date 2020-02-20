@@ -1,0 +1,15 @@
+﻿{
+	"MAIN": 
+	[
+		{
+			"ID": 1,
+			"LANGUAGE":"العربية",
+			"LANGUAGE_URL": "http://www.hisnmuslim.com/api/ar/husn_ar.json"
+		},
+		{
+			"ID": 2,
+			"LANGUAGE":"English",
+			"LANGUAGE_URL": "http://www.hisnmuslim.com/api/en/husn_en.json"
+		}
+	]
+}
