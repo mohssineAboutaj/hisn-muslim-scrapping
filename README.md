@@ -60,4 +60,4 @@ yarn start:en
 thenk you very much for the [Hisnmuslim](https://hisnmuslim.com/) owner(s), baraka llaho fika
 
 ## License
-MIT
+[MIT](./LICENSE)
