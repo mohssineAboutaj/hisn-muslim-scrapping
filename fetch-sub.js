@@ -3,7 +3,7 @@ const lang = getArg('lang') || defaultLang,
 			husn = require(`./data/husn_muslim_book_${lang}.json`),
 			wget = require('node-wget'),
 			subAudioDest = "./audio/sub/",
-			delay = 1000;
+			delay = 3000;
 
 pathExist(subAudioDest)
 
