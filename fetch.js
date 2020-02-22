@@ -5,7 +5,7 @@ const lang = getArg('lang') || defaultLang,
 			wget = require('node-wget'),
 			dest = `./data/${lang}/`,
 			audioDest = "./audio/",
-			delay = 1000;
+			delay = 3000;
 
 pathExist(dest)
 pathExist(audioDest)
