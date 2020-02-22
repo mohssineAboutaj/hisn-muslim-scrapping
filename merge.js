@@ -3,10 +3,10 @@ const lang = getArg('lang') || defaultLang,
 			husnKey = Object.keys(require(`./data/husn_${lang}.json`))[0],
 			husn = require(`./data/husn_${lang}.json`)[husnKey];
 
-let newHusnBook = []
+let newhusnBook = []
 
 if (getArg('mode') === "prod") {
-	husn.forEach(el => {
+	husn.forEach(async function(el) {
 		let adkar = {}
 	
 		adkar.ID = el.ID
@@ -18,11 +18,11 @@ if (getArg('mode') === "prod") {
 		let subAdkar = require(`./data/${lang}/${el.ID}.json`)[subAdkarKey]
 		adkar.children = subAdkar
 	
-		newHusnBook.push(adkar)
+		newhusnBook.push(adkar)
 	
-		insert({
+		await insert({
 			fileName: `data/husn_muslim_book_${lang}.json`,
-			object: newHusnBook,
+			object: newhusnBook,
 		})
 	})
 	
@@ -40,11 +40,11 @@ if (getArg('mode') === "prod") {
 		let subAdkar = require(`./data/${lang}/${el.ID}.json`)[subAdkarKey]
 		adkar.children = subAdkar
 
-		newHusnBook.push(adkar)
+		newhusnBook.push(adkar)
 
 		insert({
 			fileName: `data/husn_muslim_book_${lang}.json`,
-			object: newHusnBook,
+			object: newhusnBook,
 		})
 	}
 }

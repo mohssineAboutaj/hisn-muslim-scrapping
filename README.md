@@ -8,9 +8,18 @@ A sample JavaScript/NodeJs scrapper project based on [hisnmuslim API](https://hi
 + download audio's of the adhkars
 + merge all of these info in one place in json file as a book
 
+## Project Structure & files functionality
++ *index.js* fetch & create adkar main page in one json file
++ *fetch.js* fetch/download the dikr text & audio
++ *merge.js* merge/concat the data commes from *index.js* & *fetch.js*
++ *fetch-sub.js* fetch sub adkar related to the main adkar fetched in *fetch.js*
+
 ## Requirements
 + [Nodejs](https://nodejs.org/en/)
 + [npm](https://www.npmjs.com/)
+
+## Download
+you can clone this repository or download as zip file
 
 ## Install Dependencies
 ```sh
@@ -55,9 +64,11 @@ or
 ```sh
 yarn start:en
 ```
+### Custom
+you can also run specifie step `see scripts properties` this need you to be a developer
 
 ## Thanks
-thenk you very much for the [Hisnmuslim](https://hisnmuslim.com/) owner(s), baraka llaho fika
+thenk you very much for the [hisnmuslim](https://hisnmuslim.com/) owner(s), baraka llaho fika
 
 ## License
 [MIT](./LICENSE)

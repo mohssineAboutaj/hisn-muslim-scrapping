@@ -19,20 +19,21 @@ let husnMuslimfullLocalBook = []
 
 let reqTimer = setInterval(async function() {
 	if (i <= limit) {
-		updatedHusn = husn[i]
-		husn[i].children.forEach(async function(subHusn, index) {
+		updatedhusn = husn[i]
+		husn[i].children.forEach(async function(subhusn, index) {
 			await wget({
-				url: subHusn.AUDIO,
+				url: subhusn.AUDIO,
 				timeout: 1000,
 				dest: subAudioDest,
 			})
-			updatedHusn.children[index].AUDIO = './audio/sub/' + subHusn.AUDIO.slice(subHusn.AUDIO.lastIndexOf('/') + 1)
-			husnMuslimfullLocalBook.push(updatedHusn)
+			updatedhusn.children[index].AUDIO_URL = subhusn.AUDIO
+			updatedhusn.children[index].AUDIO = './audio/sub/' + subhusn.AUDIO.slice(subhusn.AUDIO.lastIndexOf('/') + 1)
+			husnMuslimfullLocalBook.push(updatedhusn)
 		});
 		i++
 	} else {
 		clearInterval(reqTimer)
-		insert({
+		await insert({
 			object: husnMuslimfullLocalBook,
 			fileName: `data/full_husn_muslim_${lang}.json`,
 		})
