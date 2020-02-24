@@ -2,6 +2,7 @@ const { pathExist, insert, getArg, defaultLang } = require('./global');
 const lang = getArg('lang') || defaultLang,
 			husn = require(`./data/husn_muslim_book_${lang}.json`),
 			wget = require('node-wget'),
+			uniqWith = require('uniq-with'),
 			subAudioDest = "./audio/sub/",
 			delay = 3000;
 
@@ -20,7 +21,7 @@ let husnMuslimfullLocalBook = []
 let reqTimer = setInterval(async function() {
 	if (i <= limit) {
 		updatedhusn = husn[i]
-		husn[i].children.forEach(async function(subhusn, index) {
+		await husn[i].children.forEach(async function(subhusn, index) {
 			await wget({
 				url: subhusn.AUDIO,
 				timeout: 1000,
@@ -33,8 +34,9 @@ let reqTimer = setInterval(async function() {
 		i++
 	} else {
 		clearInterval(reqTimer)
+		uniqData = uniqWith((a, b) => a.ID === b.ID, husnMuslimfullLocalBook);
 		await insert({
-			object: husnMuslimfullLocalBook,
+			object: uniqData,
 			fileName: `data/full_husn_muslim_${lang}.json`,
 		})
 		console.log("fetching complete");

@@ -1,37 +1,37 @@
 {
-  "name": "husn-muslim-scrapping",
-  "version": "1.0.0",
-  "description": "A sample JavaScript/NodeJs scrapper project based on husnmuslim API to use all off the test & audios offline without the connecting with the original api",
-  "main": "index.js",
-  "scripts": {
-    "step1": "node index.js",
-    "step2": "node fetch.js",
-    "step3": "node merge.js",
+	"name": "husn-muslim-scrapping",
+	"version": "1.0.0",
+	"description": "A sample JavaScript/NodeJs scrapper project based on husnmuslim API to use all off the test & audios offline without the connecting with the original api",
+	"main": "index.js",
+	"scripts": {
+		"step1": "node index.js",
+		"step2": "node fetch.js",
+		"step3": "node merge.js",
 		"step4": "node fetch-sub.js",
-    "step1:prod": "node index.js mode=prod",
-    "step2:prod": "node fetch.js mode=prod",
-    "step3:prod": "node merge.js mode=prod",
+		"step1:prod": "node index.js mode=prod",
+		"step2:prod": "node fetch.js mode=prod",
+		"step3:prod": "node merge.js mode=prod",
 		"step4:prod": "node fetch-sub.js mode=prod",
-    "step1:en": "node index.js lang=en",
-    "step2:en": "node fetch.js lang=en",
-    "step3:en": "node merge.js lang=en",
+		"step1:en": "node index.js lang=en",
+		"step2:en": "node fetch.js lang=en",
+		"step3:en": "node merge.js lang=en",
 		"step4:en": "node fetch-sub.js lang=en",
-    "step1:en:prod": "node index.js mode=prod lang=en",
-    "step2:en:prod": "node fetch.js mode=prod lang=en",
-    "step3:en:prod": "node merge.js mode=prod lang=en",
+		"step1:en:prod": "node index.js mode=prod lang=en",
+		"step2:en:prod": "node fetch.js mode=prod lang=en",
+		"step3:en:prod": "node merge.js mode=prod lang=en",
 		"step4:en:prod": "node fetch-sub.js mode=prod lang=en",
 		"start": "node index.js && node fetch.js mode=prod && node merge.js mode=prod && node fetch-sub.js mode=prod",
-    "dev": "node index.js && node fetch.js && node merge.js && node fetch-sub.js",
+		"dev": "node index.js && node fetch.js && node merge.js && node fetch-sub.js",
 		"start:en": "node index.js && node fetch.js mode=prod lang=en && node merge.js mode=prod lang=en && node fetch-sub.js mode=prod lang=en",
-    "dev:en": "node index.js && node fetch.js lang=en && node merge.js lang=en && node fetch-sub.js lang=en"
-  },
-  "keywords": [],
-  "author": "Mohssin Aboutaj",
-  "license": "MIT",
-  "dependencies": {
-    "argv": "^0.0.2",
-    "node-wget": "^0.4.3",
-    "npm-run-all": "^4.1.5",
-    "write-json": "^3.0.1"
-  }
+		"dev:en": "node index.js && node fetch.js lang=en && node merge.js lang=en && node fetch-sub.js lang=en"
+	},
+	"keywords": [],
+	"author": "Mohssin Aboutaj",
+	"license": "MIT",
+	"dependencies": {
+		"argv": "^0.0.2",
+		"node-wget": "^0.4.3",
+		"uniq-with": "^0.1.2",
+		"write-json": "^3.0.1"
+	}
 }
