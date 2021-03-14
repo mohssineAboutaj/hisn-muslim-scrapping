@@ -1,17 +1,32 @@
-const main = require('./main.json').MAIN,
-			wget = require('node-wget'),
-			dest = "./data/",
-			{ pathExist } = require('./global');
+const { pathExist, insert, main, getArg } = require("./global");
+const UserAgent = require("user-agents");
+const axios = require("axios");
+const dest = "./data/";
 
-console.log("The proccessing will take some time over than 5 minute, please wait until everything done");
+if (getArg("mode") === "prod") {
+  console.log(
+    "The proccessing will take unxpectly long time, please wait until everything done"
+  );
+} else {
+  console.log("The proccessing starting, please wait until everything done");
+}
 
-pathExist(dest)
+pathExist(dest);
 
-main.forEach(async function(el) {
-	let url = el.LANGUAGE_URL;
-	await wget({
-		url,
-		dest,
-		timeout: 1000,
-	})
+main.forEach((el) => {
+  const url = el.LANGUAGE_URL;
+  const fileName = dest + url.split("/").pop();
+
+  axios
+    .get(url, {
+      headers: {
+        "User-Agent": new UserAgent().toString(),
+      },
+    })
+    .then(({ data }) => {
+      insert({ fileName, object: data });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
