@@ -23,12 +23,12 @@ if (getArg("mode") === "prod") {
 
 let i = 0;
 
-let reqTimer = setInterval(() => {
+let reqTimer = setInterval(async () => {
   if (i <= limit) {
     const url = husn[i].TEXT;
     const fileName = dest + url.split("/").pop();
 
-    axios
+    await axios
       .get(url, {
         headers: {
           "User-Agent": new UserAgent().toString(),

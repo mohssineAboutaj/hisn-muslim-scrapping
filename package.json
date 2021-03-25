@@ -24,7 +24,9 @@
     "dev": "node index.js && node fetch.js && node merge.js && node fetch-sub.js",
     "start:en": "node index.js && node fetch.js mode=prod lang=en && node merge.js mode=prod lang=en && node fetch-sub.js mode=prod lang=en",
     "dev:en": "node index.js && node fetch.js lang=en && node merge.js lang=en && node fetch-sub.js lang=en",
-    "format": "prettier . --write"
+    "format": "prettier . --write",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [
     "hisn muslim",
@@ -48,6 +50,7 @@
     "write-json": "^3.0.1"
   },
   "devDependencies": {
+    "jest": "^26.6.3",
     "prettier": "^2.2.1"
   },
   "repository": {
