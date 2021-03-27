@@ -63,4 +63,14 @@ describe("should children props", () => {
       });
     });
   });
+
+  it("should children has the title & it match to the parent", () => {
+    file.forEach((f) => {
+      f.children.forEach((c) => {
+        expect(c.ID).toBeDefined();
+        expect(typeof c.TITLE).toBe("string");
+        expect(c.TITLE).toEqual(f.TITLE);
+      });
+    });
+  });
 });

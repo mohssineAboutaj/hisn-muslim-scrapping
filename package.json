@@ -20,10 +20,10 @@
     "step:2:en:prod": "node fetch.js mode=prod lang=en",
     "step:3:en:prod": "node merge.js mode=prod lang=en",
     "step:4:en:prod": "node fetch-sub.js mode=prod lang=en",
-    "start": "node index.js && node fetch.js mode=prod && node merge.js mode=prod && node fetch-sub.js mode=prod",
-    "dev": "node index.js && node fetch.js && node merge.js && node fetch-sub.js",
-    "start:en": "node index.js && node fetch.js mode=prod lang=en && node merge.js mode=prod lang=en && node fetch-sub.js mode=prod lang=en",
-    "dev:en": "node index.js && node fetch.js lang=en && node merge.js lang=en && node fetch-sub.js lang=en",
+    "start": "node index.js && node fetch.js mode=prod && node merge.js mode=prod && node fetch-sub.js mode=prod && node final.js",
+    "dev": "node index.js && node fetch.js && node merge.js && node fetch-sub.js && node final.js",
+    "start:en": "node index.js && node fetch.js mode=prod lang=en && node merge.js mode=prod lang=en && node fetch-sub.js mode=prod lang=en && node final.js lang=en",
+    "dev:en": "node index.js && node fetch.js lang=en && node merge.js lang=en && node fetch-sub.js lang=en && node final.js lang=en",
     "format": "prettier . --write",
     "test": "jest",
     "test:watch": "jest --watch"
@@ -44,9 +44,11 @@
   "dependencies": {
     "argv": "^0.0.2",
     "axios": "^0.21.1",
+    "nanoid": "^3.1.22",
     "node-wget": "^0.4.3",
     "uniq-with": "^0.1.2",
     "user-agents": "^1.0.581",
+    "uuid": "^8.3.2",
     "write-json": "^3.0.1"
   },
   "devDependencies": {

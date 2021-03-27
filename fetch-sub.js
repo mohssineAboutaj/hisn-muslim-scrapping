@@ -39,7 +39,7 @@ let reqTimer = setInterval(() => {
     uniqData = uniqWith((a, b) => a.ID === b.ID, husnMuslimfullLocalBook);
     insert({
       object: uniqData,
-      fileName: `data/full_husn_muslim_${lang}.json`,
+      fileName: `data/after_sub_${lang}.json`,
     });
     console.log("fetching complete");
   }

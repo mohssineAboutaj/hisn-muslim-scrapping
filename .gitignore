@@ -2,10 +2,15 @@
 node_modules/
 data/
 audio/
+
 # ignore IDE's files/directories
 .idea
-# ignore files
+
+# lock, logs
 package-lock.json
 yarn.lock
 *.lock
 *.log
+
+# test
+test.js
