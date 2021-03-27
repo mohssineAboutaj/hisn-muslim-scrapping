@@ -9,6 +9,7 @@ husn.map((h) => {
     c._id = nanoid();
     c.TITLE = h.TITLE;
   });
+  h.count = h.children.length;
 });
 
 insert({
