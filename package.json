@@ -1,6 +1,6 @@
 {
   "name": "husn-muslim-scrapping",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A sample JavaScript/NodeJs scrapper project based on husnmuslim API to use all off the texts & audios offline without the connecting with the original api",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,11 @@
     "dev:en": "node index.js && node fetch.js lang=en && node merge.js lang=en && node fetch-sub.js lang=en && node final.js lang=en",
     "format": "prettier . --write",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "step:dev": "node index.js && node fetch.js && node merge.js && node fetch-sub.js && node final.js",
+    "step:prod": "node index.js mode=prod && node fetch.js mode=prod && node merge.js mode=prod && node fetch-sub.js mode=prod && node final.js",
+    "step:dev:en": "node index.js && node fetch.js lang=en && node merge.js lang=en && node fetch-sub.js lang=en && node final.js lang=en",
+    "step:prod:en": "node index.js mode=prod lang=en && node fetch.js mode=prod lang=en && node merge.js mode=prod lang=en && node fetch-sub.js mode=prod lang=en && node final.js lang=en"
   },
   "keywords": [
     "hisn muslim",
