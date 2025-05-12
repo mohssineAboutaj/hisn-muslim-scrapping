@@ -1,6 +1,6 @@
 {
   "name": "husn-muslim-scrapping",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A sample JavaScript/NodeJs scrapper project based on husnmuslim API to use all off the texts & audios offline without the connecting with the original api",
   "main": "index.js",
   "scripts": {

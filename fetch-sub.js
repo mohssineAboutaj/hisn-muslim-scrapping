@@ -20,19 +20,23 @@ let husnMuslimfullLocalBook = [];
 
 let reqTimer = setInterval(() => {
   if (i <= limit) {
-    updatedhusn = husn[i];
-    husn[i].children.forEach((subhusn, index) => {
-      wget({
-        url: subhusn.AUDIO,
-        timeout: 1000,
-        dest: subAudioDest,
+    let updatedhusn = husn[i];
+    if (updatedhusn && Array.isArray(updatedhusn.children)) {
+      updatedhusn.children.forEach((subhusn, index) => {
+        if (subhusn && subhusn.AUDIO) {
+          wget({
+            url: subhusn.AUDIO,
+            timeout: 1000,
+            dest: subAudioDest,
+          });
+          updatedhusn.children[index].AUDIO_URL = subhusn.AUDIO;
+          updatedhusn.children[index].AUDIO =
+            "./audio/sub/" +
+            subhusn.AUDIO.slice(subhusn.AUDIO.lastIndexOf("/") + 1);
+          husnMuslimfullLocalBook.push(updatedhusn);
+        }
       });
-      updatedhusn.children[index].AUDIO_URL = subhusn.AUDIO;
-      updatedhusn.children[index].AUDIO =
-        "./audio/sub/" +
-        subhusn.AUDIO.slice(subhusn.AUDIO.lastIndexOf("/") + 1);
-      husnMuslimfullLocalBook.push(updatedhusn);
-    });
+    }
     i++;
   } else {
     clearInterval(reqTimer);
